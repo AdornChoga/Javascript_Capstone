@@ -6,6 +6,11 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 nav ul {
   list-style-type: none;
   display: flex;
@@ -27,4 +32,22 @@ nav ul li + li {
 
 nav ul li + li:hover {
   text-decoration: underline blue;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border: 0.2rem solid black;
+}
+
+#txt-area {
+  height: 5rem;
+  font-size: 2rem;
+  padding-left: 2em;
+}
+
+#footer-bg {
+  height: 3rem;
+  background-color: grey;
 }
