@@ -6,7 +6,25 @@ html {
   box-sizing: border-box;
 }
 
-ul li img {
-  width: 3rem;
-  height: 5rem;
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.fa-film {
+  font-size: 5rem;
+  color: darkblue;
+}
+
+nav ul li + li {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+nav ul li + li:hover {
+  text-decoration: underline blue;
 }
