@@ -8,19 +8,19 @@ const events = () => {
   window.addEventListener('load', () => {
     getMovies();
     movieSection.classList.add('focussed');
-  })
+  });
 
-  movieSection.addEventListener('click', (e) => {
+  movieSection.addEventListener('click', () => {
     movieSection.classList.add('focussed');
     seriesSection.classList.remove('focussed');
     getMovies();
-  })
-  
-  seriesSection.addEventListener('click', (e) => {
+  });
+
+  seriesSection.addEventListener('click', () => {
     seriesSection.classList.add('focussed');
     movieSection.classList.remove('focussed');
     getSeries();
-  })
-}
+  });
+};
 
 export default events;

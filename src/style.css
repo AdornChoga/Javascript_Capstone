@@ -60,7 +60,6 @@ main {
   font-size: 1vw;
 }
 
-
 .films li img {
   width: 22vw;
   height: 24vw;
@@ -69,7 +68,7 @@ main {
 footer {
   width: 100%;
   border: 0.2rem solid black;
-  background-color:white;
+  background-color: white;
 }
 
 #txt-area {

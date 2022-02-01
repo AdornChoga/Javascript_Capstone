@@ -6,9 +6,9 @@ const getSeries = () => {
   const movies = [];
   filmsContainer.innerHTML = '';
   filmsID.forEach(async (id) => {
-    let data = fetch(`${baseUrl}${id}`);
-    let respone = (await data).json();
-    let movie = await respone;
+    const data = fetch(`${baseUrl}${id}`);
+    const respone = (await data).json();
+    const movie = await respone;
     filmsContainer.innerHTML += `
     <li>
       <div class="film-image">
@@ -16,9 +16,9 @@ const getSeries = () => {
       </div>
       <h1>${movie.name}</h1>
     </li>
-    `
-  })
-  return movies
-}
+    `;
+  });
+  return movies;
+};
 
 export default getSeries;

@@ -1,4 +1,4 @@
-const filmsID = [314142,79551,343435,377673,80270,248596];
+const filmsID = [314142, 79551, 343435, 377673, 80270, 248596];
 const baseUrl = 'https://api.tvmaze.com/lookup/shows?thetvdb=';
 
 const getMovies = () => {
@@ -6,9 +6,9 @@ const getMovies = () => {
   const movies = [];
   filmsContainer.innerHTML = '';
   filmsID.forEach(async (id) => {
-    let data = fetch(`${baseUrl}${id}`);
-    let respone = (await data).json();
-    let movie = await respone;
+    const data = fetch(`${baseUrl}${id}`);
+    const respone = (await data).json();
+    const movie = await respone;
     filmsContainer.innerHTML += `
     <li>
       <div class="film-image">
@@ -16,11 +16,9 @@ const getMovies = () => {
       </div>
       <h1>${movie.name}</h1>
     </li>
-    `
-  })
-  return movies
-}
+    `;
+  });
+  return movies;
+};
 
 export default getMovies;
-
-
