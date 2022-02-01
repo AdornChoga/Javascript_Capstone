@@ -1,8 +1,7 @@
 import getSeries from './series.js';
 import getMovies from './movies.js';
 
-const filmTemplate = (info) => {
-  return `
+const filmTemplate = (info) => `
     <li>
       <div class="film-image">
         <img src=${info.image}>
@@ -16,8 +15,6 @@ const filmTemplate = (info) => {
       <button type="button" class="comments">Comments</button>
     </li>
   `;
-}
-
 
 const displayMovies = () => {
   const filmsContainer = document.querySelector('.films');
