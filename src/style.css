@@ -54,6 +54,8 @@ main {
 }
 
 .films li {
+  display: flex;
+  flex-direction: column;
   padding: 0;
   border: 0.2rem solid red;
   text-align: center;
@@ -63,6 +65,27 @@ main {
 .films li img {
   width: 22vw;
   height: 24vw;
+}
+
+.film-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.fa-heart {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.comments {
+  align-self: flex-start;
+  margin: 0 0 1rem 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.3em;
+  border: solid;
 }
 
 footer {
