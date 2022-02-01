@@ -1,4 +1,5 @@
 import './style.css';
-import {movies} from './modules/movies.js';
+import events from './modules/events';
 
-console.log(movies)
+events();
+

@@ -30,15 +30,46 @@ nav ul li + li {
   cursor: pointer;
 }
 
-nav ul li + li:hover {
+.focussed {
   text-decoration: underline blue;
 }
 
+main {
+  margin-bottom: 5rem;
+}
+
+.films {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.film-image {
+  width: 100%;
+}
+
+.films li {
+  padding: 0;
+  border: 0.2rem solid red;
+  text-align: center;
+  font-size: 1vw;
+}
+
+
+.films li img {
+  width: 22vw;
+  height: 24vw;
+}
+
 footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   border: 0.2rem solid black;
+  background-color:white;
 }
 
 #txt-area {

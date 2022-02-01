@@ -1,7 +1,7 @@
-const filmsID = [314142,79551,343435,377673,80270,248596];
+const filmsID = [276562, 350665, 396564, 359264, 364928, 279536];
 const baseUrl = 'https://api.tvmaze.com/lookup/shows?thetvdb=';
 
-const getMovies = () => {
+const getSeries = () => {
   const filmsContainer = document.querySelector('.films');
   const movies = [];
   filmsContainer.innerHTML = '';
@@ -21,6 +21,4 @@ const getMovies = () => {
   return movies
 }
 
-export default getMovies;
-
-
+export default getSeries;
