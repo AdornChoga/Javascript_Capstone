@@ -1,5 +1,6 @@
 import * as UI from './appUI.js';
 import getMovies from './movies.js';
+import getSeries from './series.js';
 import * as Templates from './html_templates.js';
 
 const movieSection = document.querySelector('.movie-sect');
@@ -24,11 +25,12 @@ const events = () => {
   });
 };
 
-const comments = (data) => {
+const comments = (data, type) => {
   data.forEach(async (btn) => {
-    let moviesData = await getMovies()[btn.id];
+    let filmData =
+    type === 'movies' ? await getMovies()[btn.id] : await getSeries()[btn.id];
     btn.addEventListener('click', () => {
-      Templates.popUpTemplate(moviesData)
+      Templates.popUpTemplate(filmData)
     })
   })
 }
