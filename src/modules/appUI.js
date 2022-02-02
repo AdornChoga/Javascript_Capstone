@@ -6,16 +6,16 @@ const displayPopUp = (movie) => {
   container.classList.add('poppup-container');
   container.innerHTML = `
   <div class="popup-window">
-  <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="close-icon">
-    <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
-  </svg>
-  <img src=${movie.image.medium}>
-  <div class="movie-info">
-  <h2>${movie.name}</h2>
-  <h4>Average Runtime: ${movie.averageRuntime} minutes</h4>
-  <h4>Ended: ${movie.ended} </h4>
-  <span>${movie.summary}</span>
-  </div>
+    <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="close-icon">
+     <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+    </svg>
+    <img src=${movie.image.medium}>
+    <div class="movie-info">
+     <h2>${movie.name}</h2>
+     <h4>Average Runtime: ${movie.averageRuntime} minutes</h4>
+     <h4>Ended: ${movie.ended} </h4>
+     <span>${movie.summary}</span>
+    </div>
   </div>
   `;
   return container;
