@@ -1,14 +1,13 @@
-
-const filmTemplate = (info,index,numLikes) => `
+const filmTemplate = (info, index, numLikes) => `
 <li>
-  <div class="film-image">
+  <div class="image-container">
     <img src=${info.image} class="film-image">
   </div>
   <div class="film-info">
     <h1 class="film-title">${info.name}</h1>
     <div class="likes">
       <i class="far fa-heart" id="${info.id}"></i>
-      <span class="likes">${numLikes} ${parseInt(numLikes) === 1 ? "Like" : "Likes"}</span>
+      <span class="likes">${numLikes} ${Number(numLikes) === 1 ? 'Like' : 'Likes'}</span>
     </div>
   </div>
   <button type="button" class="comments" id="${index}">Comments</button>
@@ -35,10 +34,10 @@ const popUpTemplate = (movie) => {
   </div>
   `;
   popUpContainer.style.display = 'block';
-  const closePopup = document.querySelector('.close-icon')
+  const closePopup = document.querySelector('.close-icon');
   closePopup.addEventListener('click', () => {
     popUpContainer.style.display = 'none';
-  })
+  });
 };
 
-export {filmTemplate, popUpTemplate};
+export { filmTemplate, popUpTemplate };

@@ -49,7 +49,7 @@ main {
   gap: 1.5rem;
 }
 
-.film-image {
+.image-container {
   width: 100%;
 }
 
@@ -121,6 +121,7 @@ footer {
   display: none;
   padding: 5rem;
   backdrop-filter: blur(3px);
+  overflow-y: scroll;
 }
 
 .popup-window {
