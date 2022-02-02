@@ -62,7 +62,7 @@ main {
   font-size: 1vw;
 }
 
-.films li img {
+.film-image {
   width: 22vw;
   height: 24vw;
 }
@@ -105,14 +105,14 @@ footer {
   background-color: grey;
 }
 
-.poppup-container {
+.popup-container {
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.356);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
