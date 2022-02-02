@@ -44,9 +44,7 @@ const displayMovies = async () => {
     const btnComment = document.querySelectorAll('.comments');
     btnComment.forEach((x) => {
       x.addEventListener('click', async () => {
-        const resp = await fetch(
-          `https://api.tvmaze.com/lookup/shows?thetvdb=${x.id}`
-        );
+        const resp = await fetch(`https://api.tvmaze.com/lookup/shows?thetvdb=${x.id}`);
         const data = await resp.json();
         const div = displayPopUp(data);
         document.body.append(div);
@@ -67,9 +65,7 @@ const displaySeries = () => {
     const btnComment = document.querySelectorAll('.comments');
     btnComment.forEach((x) => {
       x.addEventListener('click', async () => {
-        const resp = await fetch(
-          `https://api.tvmaze.com/lookup/shows?thetvdb=${x.id}`
-        );
+        const resp = await fetch(`https://api.tvmaze.com/lookup/shows?thetvdb=${x.id}`);
         const data = await resp.json();
         const div = displayPopUp(data);
         document.body.append(div);
