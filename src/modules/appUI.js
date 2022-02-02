@@ -37,9 +37,8 @@ const filmTemplate = (info) => `
   `;
 const displayMovies = async () => {
   const filmsContainer = document.querySelector('.films');
-
   filmsContainer.innerHTML = '';
-  const movieList = getMovies().map(async (movie, index) => {
+  getMovies().map(async (movie) => {
     const movieData = await movie;
     filmsContainer.innerHTML += filmTemplate(movieData);
     const btnComment = document.querySelectorAll('.comments');
@@ -49,7 +48,6 @@ const displayMovies = async () => {
           `https://api.tvmaze.com/lookup/shows?thetvdb=${x.id}`
         );
         const data = await resp.json();
-        console.log(data);
         const div = displayPopUp(data);
         document.body.append(div);
         document.querySelector('.close-icon').addEventListener('click', () => {
