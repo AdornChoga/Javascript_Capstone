@@ -1,13 +1,14 @@
 
-const filmTemplate = (info,index) => `
+const filmTemplate = (info,index,numLikes) => `
 <li>
   <div class="film-image">
     <img src=${info.image} class="film-image">
   </div>
   <div class="film-info">
     <h1 class="film-title">${info.name}</h1>
-    <div>
-      <i class="far fa-heart"></i>
+    <div class="likes">
+      <i class="far fa-heart" id="${info.id}"></i>
+      <span class="likes">${numLikes} ${parseInt(numLikes) === 1 ? "Like" : "Likes"}</span>
     </div>
   </div>
   <button type="button" class="comments" id="${index}">Comments</button>
@@ -25,9 +26,9 @@ const popUpTemplate = (movie) => {
     <div class="movie-info">
       <img src=${movie.image} class="film-image">
       <div class="description">
-        <span>Average Runtime: ${movie.runtime} minutes</span>
-        <span>Ended: ${movie.ended} </span>
-        <span>Summary: ${movie.description}</span>
+        <span><b>Average Runtime:</b> ${movie.runtime} minutes</span>
+        <span><b>Ended:</b> ${movie.ended} </span>
+        <span><b>Summary:</b> ${movie.description}</span>
       </div>
     </div>
     <div class="popup-comments">Comments</div>

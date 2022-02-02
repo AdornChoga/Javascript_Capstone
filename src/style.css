@@ -105,6 +105,12 @@ footer {
   background-color: grey;
 }
 
+.likes {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
 .popup-container {
   position: fixed;
   left: 0;
@@ -141,8 +147,10 @@ footer {
 .description {
   display: flex;
   flex-direction: column;
-  gap: 0;
   justify-content: flex-start;
+  border: solid;
+  height: 24vw;
+  overflow-y: scroll;
 }
 
 .description p {

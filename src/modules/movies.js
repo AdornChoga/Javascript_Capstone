@@ -12,7 +12,7 @@ const getMovies = () => {
       description: movie.summary,
       runtime: movie.averageRuntime,
       ended: movie.ended,
-      id,
+      id: movie.id,
     };
     return obj;
   });

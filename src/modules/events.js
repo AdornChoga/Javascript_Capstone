@@ -1,6 +1,7 @@
 import * as UI from './appUI.js';
 import getMovies from './movies.js';
 import getSeries from './series.js';
+import {postLikes} from './likes.js'
 import * as Templates from './html_templates.js';
 
 const movieSection = document.querySelector('.movie-sect');
@@ -35,4 +36,12 @@ const comments = (data, type) => {
   })
 }
 
-export {events, comments};
+const filmLikes = async (likesIcons) => {
+  likesIcons.forEach(icon => {
+    icon.addEventListener('click', (e) => {
+      postLikes(icon.id)
+    })
+  })
+}
+
+export {events, comments, filmLikes};
