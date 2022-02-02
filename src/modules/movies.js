@@ -6,12 +6,13 @@ const getMovies = () => {
     const data = fetch(`${baseUrl}${id}`);
     const respone = (await data).json();
     const movie = await respone;
-
     const obj = {
       name: movie.name,
       image: movie.image.original,
       description: movie.summary,
-      id,
+      runtime: movie.averageRuntime,
+      ended: movie.ended,
+      id: movie.id,
     };
     return obj;
   });

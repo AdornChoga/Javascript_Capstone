@@ -5,12 +5,14 @@ const getSeries = () => {
   const result = filmsID.map(async (id) => {
     const data = fetch(`${baseUrl}${id}`);
     const respone = (await data).json();
-    const movie = await respone;
+    const series = await respone;
     const obj = {
-      name: movie.name,
-      image: movie.image.original,
-      description: movie.summary,
-      id,
+      name: series.name,
+      image: series.image.original,
+      description: series.summary,
+      runtime: series.averageRuntime,
+      ended: series.ended,
+      id: series.id,
     };
     return obj;
   });
