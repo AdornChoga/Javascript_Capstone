@@ -8,7 +8,7 @@ const displayPopUp = (movie) => {
   <div class="popup-window">
   <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="close-icon">
     <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
-</svg>
+  </svg>
   <img src=${movie.image.medium}>
   <div class="movie-info">
   <h2>${movie.name}</h2>
@@ -20,10 +20,6 @@ const displayPopUp = (movie) => {
   `;
   return container;
 };
-
-// getMovies().forEach(async (movie) => {
-//   const displayedMovie = await movie;
-// });
 
 const filmTemplate = (info) => `
     <li>
@@ -70,6 +66,20 @@ const displaySeries = () => {
   getSeries().forEach(async (movie) => {
     const movieData = await movie;
     filmsContainer.innerHTML += filmTemplate(movieData);
+    const btnComment = document.querySelectorAll('.comments');
+    btnComment.forEach((x) => {
+      x.addEventListener('click', async () => {
+        const resp = await fetch(
+          `https://api.tvmaze.com/lookup/shows?thetvdb=${x.id}`
+        );
+        const data = await resp.json();
+        const div = displayPopUp(data);
+        document.body.append(div);
+        document.querySelector('.close-icon').addEventListener('click', () => {
+          document.querySelector('.poppup-container').remove();
+        });
+      });
+    });
   });
 };
 

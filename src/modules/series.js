@@ -10,6 +10,7 @@ const getSeries = () => {
       name: movie.name,
       image: movie.image.original,
       description: movie.summary,
+      id,
     };
     return obj;
   });
