@@ -1,6 +1,6 @@
 import getSeries from './series.js';
 import getMovies from './movies.js';
-import comments from './comments.js';
+import {comments,getComment,postComment} from './comments.js';
 import { filmLikes, getLikes } from './likes.js';
 import * as Templates from './html_templates.js';
 

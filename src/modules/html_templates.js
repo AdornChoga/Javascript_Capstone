@@ -1,4 +1,4 @@
-import {postComment, getComment} from './postcomment.js'
+import {postComment, getComment} from './comments.js'
 const filmTemplate = (info, index, numLikes) => `
 <li>
   <div class="image-container">
@@ -15,8 +15,21 @@ const filmTemplate = (info, index, numLikes) => `
 </li>
 `;
 
-const popUpTemplate = (movie) => {
+const popUpTemplate = async (movie) => {
   const popUpContainer = document.querySelector('.popup-container');
+  let commentData =  await getComment(movie.id)
+  const commentItems = () => {
+    if(!Array.isArray(commentData)){
+      return `<li>No comment</li>`
+    }else{
+      const commentTemplate = commentData.map((comment,index)=>{
+        return `<li>${comment.username} : ${comment.comment}</li>`
+          })
+         return commentTemplate.join('') 
+    }
+    
+   }
+
   popUpContainer.innerHTML = `
   <div class="popup-window">
     <h2 class="movie-title">${movie.name}</h2>
@@ -32,18 +45,19 @@ const popUpTemplate = (movie) => {
       </div>
     </div>
     <div class="popup-comments">Comments</div>
-    <ul class="comment-list"></ul>
-  <form>
+    
+  <form class="form-submit">
+  <div class="form-container">
+  <ul class="comment-list">${commentItems()}</ul>
    <div class="name-field">
-   <h4>Name</h4>
     <input type="text" id="username" placeholder="Please enter your name">
-    </div>
-    <textarea name="textarea" id="comment" cols="30" rows="5" placeholder="please add a comment"></textarea>
+    <textarea name="textarea" id="comment" cols="10" rows="5" placeholder="please add a comment"></textarea>
     <button type="submit">Comment</button>
+    </div>
+    </div>
   </form>
   </div>
   `;
-
   
   popUpContainer.style.display = 'block';
   const closePopup = document.querySelector('.close-icon');
@@ -51,8 +65,12 @@ const popUpTemplate = (movie) => {
     popUpContainer.style.display = 'none';
   });
 
+  const form = document.querySelector('.form-submit');
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    const listContainer = document.querySelector('.comment-list')
     const comment = {
       username: form.elements.username.value.trim(),
       comment: form.elements.comment.value.trim(),
@@ -60,10 +78,17 @@ const popUpTemplate = (movie) => {
     };
   
     form.reset();
-  
-    await postComment(comment,document.body);
+     postComment(comment);
+     let commentInfo =  await getComment(comment.item_id)
+     commentInfo.forEach((comment)=>{
+      listContainer.innerHTML += `<li>${comment.username}: ${comment.comment}</li>`
+     })
+
   });
 };
+
+
+
 
 
 export { filmTemplate, popUpTemplate };
