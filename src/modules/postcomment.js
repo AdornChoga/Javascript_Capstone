@@ -3,13 +3,13 @@ const baseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstone
 const appId = 'A6awKRj5ONHGw5twcKDH';
 
 
-const postComment = async (score) => {
+const postComment = async (comment) => {
     const response = await fetch(`${baseUrl}${appId}/comments`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(score),
+      body: JSON.stringify(comment),
     });
   
     const { result } = await response.json();
