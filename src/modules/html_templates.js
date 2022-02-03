@@ -1,3 +1,4 @@
+import {postComment, getComment} from './postcomment.js'
 const filmTemplate = (info, index, numLikes) => `
 <li>
   <div class="image-container">
@@ -31,13 +32,38 @@ const popUpTemplate = (movie) => {
       </div>
     </div>
     <div class="popup-comments">Comments</div>
+    <ul class="comment-list"></ul>
+  <form>
+   <div class="name-field">
+   <h4>Name</h4>
+    <input type="text" id="username" placeholder="Please enter your name">
+    </div>
+    <textarea name="textarea" id="comment" cols="30" rows="5" placeholder="please add a comment"></textarea>
+    <button type="submit">Comment</button>
+  </form>
   </div>
   `;
+
+  
   popUpContainer.style.display = 'block';
   const closePopup = document.querySelector('.close-icon');
   closePopup.addEventListener('click', () => {
     popUpContainer.style.display = 'none';
   });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const comment = {
+      username: form.elements.username.value.trim(),
+      comment: form.elements.comment.value.trim(),
+      item_id: movie.id
+    };
+  
+    form.reset();
+  
+    await postComment(comment,document.body);
+  });
 };
+
 
 export { filmTemplate, popUpTemplate };

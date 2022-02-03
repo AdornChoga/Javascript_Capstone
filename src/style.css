@@ -105,10 +105,23 @@ footer {
   background-color: grey;
 }
 
+form{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .likes {
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
+}
+
+.name-field{
+  display: flex;
+  gap: 20px;
 }
 
 .popup-container {
@@ -169,6 +182,7 @@ footer {
   align-self: center;
   font-size: 1.5rem;
   text-decoration: underline;
+  padding: 30px;
 }
 
 .close-icon {
