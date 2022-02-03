@@ -1,5 +1,4 @@
-import  getComment  from './comments.js';
-import  postComment from './comments.js';
+import { postComment, getComment } from './comments.js';
 
 const filmTemplate = (info, index, numLikes) => `
 <li>
@@ -59,7 +58,7 @@ const popUpTemplate = async (movie) => {
 
   popUpContainer.style.display = 'block';
   const closePopup = document.querySelector('.close-icon');
-  closePopup.addEventListener('click', () => { popUpContainer.style.display = 'none' });
+  closePopup.addEventListener('click', () => { popUpContainer.style.display = 'none'; });
 
   const form = document.querySelector('.form-submit');
 
