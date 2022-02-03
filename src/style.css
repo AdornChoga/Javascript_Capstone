@@ -11,6 +11,12 @@ body {
   padding: 0;
 }
 
+li {
+  list-style: none;
+  gap: 12px;
+  font-size: 10px;
+}
+
 nav ul {
   list-style-type: none;
   display: flex;
@@ -198,12 +204,6 @@ form {
 .close-icon:hover {
   color: red;
   transform: scale(1.5);
-}
-
-li {
-  list-style: none;
-  gap: 12px;
-  font-size: 10px;
 }
 
 .form-container {

@@ -10,14 +10,8 @@ const displayMovies = async () => {
   const likesArray = await getLikes();
   const result = getMovies().map(async (movie, index) => {
     const movieData = await movie;
-    const [likes] = likesArray.filter(
-      (n) => Number(n.item_id) === movieData.id
-    );
-    filmsContainer.innerHTML += Templates.filmTemplate(
-      movieData,
-      index,
-      likes.likes
-    );
+    const [likes] = likesArray.filter((n) => Number(n.item_id) === movieData.id);
+    filmsContainer.innerHTML += Templates.filmTemplate(movieData,index,likes.likes);
     const btn = document.querySelectorAll('.comments');
     const likesNodes = document.querySelectorAll('.fa-heart');
     return { buttons: btn, likesIcons: likesNodes };
@@ -35,15 +29,9 @@ const displaySeries = async () => {
   const likesArray = await getLikes();
   const result = getSeries().map(async (series, index) => {
     const seriesData = await series;
-    const [likes] = likesArray.filter(
-      (n) => Number(n.item_id) === seriesData.id
-    );
+    const [likes] = likesArray.filter((n) => Number(n.item_id) === seriesData.id);
     const numLikes = likes !== undefined ? likes.likes : 0;
-    filmsContainer.innerHTML += Templates.filmTemplate(
-      seriesData,
-      index,
-      numLikes
-    );
+    filmsContainer.innerHTML += Templates.filmTemplate(seriesData,index,numLikes);
     const btn = document.querySelectorAll('.comments');
     const likesNodes = document.querySelectorAll('.fa-heart');
     return { buttons: btn, likesIcons: likesNodes };
