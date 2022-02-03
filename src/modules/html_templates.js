@@ -23,12 +23,12 @@ const popUpTemplate = async (movie) => {
   const commentItems = () => {
     if (!Array.isArray(commentData)) {
       return `<li>No comment</li>`;
-    } else {
-      const commentTemplate = commentData.map((comment, index) => {
+    }
+      const commentTemplate = commentData.map((comment) => {
         return `<li>${comment.username} : ${comment.comment}</li>`;
       });
       return commentTemplate.join('');
-    }
+    
   };
 
   popUpContainer.innerHTML = `
@@ -80,10 +80,9 @@ const popUpTemplate = async (movie) => {
 
     form.reset();
     await postComment(comment);
-    let commentInfo = await getComment(comment.item_id);
+    const commentInfo = await getComment(comment.item_id);
     listContainer.innerHTML = '';
-    commentInfo.forEach((comment) => {
-      let listItem = `<li>${comment.username}: ${comment.comment}</li>`;
+    commentInfo.forEach((comment) => {const listItem = `<li>${comment.username}: ${comment.comment}</li>`;
       listContainer.innerHTML += listItem;
     });
   });
