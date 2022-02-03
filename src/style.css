@@ -147,7 +147,8 @@ form {
   word-wrap: break-word;
 }
 
-#username, #comment{
+#username,
+#comment {
   outline: none;
   border: none;
   border-bottom: 0.2rem solid;
@@ -256,7 +257,3 @@ form {
   gap: 0.9rem;
   height: 30rem;
 }
-
-
-
-

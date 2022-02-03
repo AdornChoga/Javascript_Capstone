@@ -23,8 +23,7 @@ const popUpTemplate = async (movie) => {
     if (!Array.isArray(commentData)) {
       return '<li>No comment</li>';
     }
-    const commentTemplate =
-    commentData.map((comment) => `<li>
+    const commentTemplate = commentData.map((comment) => `<li>
       <span id="user">${comment.username}:</span>
       <span id="user-comment">${comment.comment}</span>
     </li>`);
