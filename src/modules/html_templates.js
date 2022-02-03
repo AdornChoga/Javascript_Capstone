@@ -78,10 +78,12 @@ const popUpTemplate = async (movie) => {
     };
   
     form.reset();
-     postComment(comment);
+    await postComment(comment);
      let commentInfo =  await getComment(comment.item_id)
+     listContainer.innerHTML = ''
      commentInfo.forEach((comment)=>{
-      listContainer.innerHTML += `<li>${comment.username}: ${comment.comment}</li>`
+       let listItem = `<li>${comment.username}: ${comment.comment}</li>`
+      listContainer.innerHTML += listItem
      })
 
   });
