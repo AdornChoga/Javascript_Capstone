@@ -1,4 +1,4 @@
-import { postComment, getComment } from './comments.js';
+import { postComment, getComment } from './apicomment.js';
 
 const filmTemplate = (info, index, numLikes) => `
 <li>
