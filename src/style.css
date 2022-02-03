@@ -84,6 +84,16 @@ main {
 .fa-heart {
   font-size: 2rem;
   cursor: pointer;
+  color: blue;
+}
+
+.fa-heart:active {
+  color: red;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
 }
 
 .comments {
