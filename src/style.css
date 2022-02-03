@@ -11,12 +11,6 @@ body {
   padding: 0;
 }
 
-li {
-  list-style: none;
-  gap: 12px;
-  font-size: 10px;
-}
-
 nav ul {
   list-style-type: none;
   display: flex;
@@ -111,25 +105,10 @@ footer {
   background-color: grey;
 }
 
-form {
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .likes {
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
-}
-
-.name-field {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
 }
 
 .popup-container {
@@ -190,7 +169,6 @@ form {
   align-self: center;
   font-size: 1.5rem;
   text-decoration: underline;
-  padding: 30px;
 }
 
 .close-icon {
@@ -204,9 +182,4 @@ form {
 .close-icon:hover {
   color: red;
   transform: scale(1.5);
-}
-
-.form-container {
-  display: flex;
-  gap: 10px;
 }
