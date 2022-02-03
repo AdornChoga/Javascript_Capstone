@@ -1,4 +1,4 @@
-import {postComment, getComment} from './comments.js'
+import { postComment, getComment } from './comments.js';
 const filmTemplate = (info, index, numLikes) => `
 <li>
   <div class="image-container">
@@ -8,7 +8,9 @@ const filmTemplate = (info, index, numLikes) => `
     <h1 class="film-title">${info.name}</h1>
     <div class="likes">
       <i class="far fa-heart" id="${info.id}"></i>
-      <span class="likes">${numLikes} ${Number(numLikes) === 1 ? 'Like' : 'Likes'}</span>
+      <span class="likes">${numLikes} ${
+  Number(numLikes) === 1 ? 'Like' : 'Likes'
+}</span>
     </div>
   </div>
   <button type="button" class="comments" id="${index}">Comments</button>
@@ -17,18 +19,17 @@ const filmTemplate = (info, index, numLikes) => `
 
 const popUpTemplate = async (movie) => {
   const popUpContainer = document.querySelector('.popup-container');
-  let commentData =  await getComment(movie.id)
+  let commentData = await getComment(movie.id);
   const commentItems = () => {
-    if(!Array.isArray(commentData)){
-      return `<li>No comment</li>`
-    }else{
-      const commentTemplate = commentData.map((comment,index)=>{
-        return `<li>${comment.username} : ${comment.comment}</li>`
-          })
-         return commentTemplate.join('') 
+    if (!Array.isArray(commentData)) {
+      return `<li>No comment</li>`;
+    } else {
+      const commentTemplate = commentData.map((comment, index) => {
+        return `<li>${comment.username} : ${comment.comment}</li>`;
+      });
+      return commentTemplate.join('');
     }
-    
-   }
+  };
 
   popUpContainer.innerHTML = `
   <div class="popup-window">
@@ -58,7 +59,7 @@ const popUpTemplate = async (movie) => {
   </form>
   </div>
   `;
-  
+
   popUpContainer.style.display = 'block';
   const closePopup = document.querySelector('.close-icon');
   closePopup.addEventListener('click', () => {
@@ -70,27 +71,22 @@ const popUpTemplate = async (movie) => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const listContainer = document.querySelector('.comment-list')
+    const listContainer = document.querySelector('.comment-list');
     const comment = {
       username: form.elements.username.value.trim(),
       comment: form.elements.comment.value.trim(),
-      item_id: movie.id
+      item_id: movie.id,
     };
-  
+
     form.reset();
     await postComment(comment);
-     let commentInfo =  await getComment(comment.item_id)
-     listContainer.innerHTML = ''
-     commentInfo.forEach((comment)=>{
-       let listItem = `<li>${comment.username}: ${comment.comment}</li>`
-      listContainer.innerHTML += listItem
-     })
-
+    let commentInfo = await getComment(comment.item_id);
+    listContainer.innerHTML = '';
+    commentInfo.forEach((comment) => {
+      let listItem = `<li>${comment.username}: ${comment.comment}</li>`;
+      listContainer.innerHTML += listItem;
+    });
   });
 };
-
-
-
-
 
 export { filmTemplate, popUpTemplate };
