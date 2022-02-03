@@ -19,7 +19,7 @@ const filmTemplate = (info, index, numLikes) => `
 
 const popUpTemplate = async (movie) => {
   const popUpContainer = document.querySelector('.popup-container');
-  let commentData = await getComment(movie.id);
+  const commentData = await getComment(movie.id);
   const commentItems = () => {
     if (!Array.isArray(commentData)) {
       return `<li>No comment</li>`;
