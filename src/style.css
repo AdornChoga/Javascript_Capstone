@@ -12,6 +12,12 @@ body {
   font-family: sans-serif;
 }
 
+li {
+  list-style: none;
+  gap: 12px;
+  font-size: 10px;
+}
+
 nav ul {
   list-style-type: none;
   display: flex;
@@ -106,10 +112,53 @@ footer {
   background-color: grey;
 }
 
+form {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .likes {
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
+}
+
+.comment-list {
+  width: 50%;
+  height: 95%;
+  outline: 0.1rem outset;
+  overflow-y: scroll;
+}
+
+.comment-list li {
+  word-wrap: break-word;
+}
+
+#username, #comment{
+  outline: none;
+  border: none;
+  border-bottom: 0.2rem solid;
+}
+
+#user {
+  font-size: 1.2rem;
+  color: blue;
+  font-weight: bold;
+}
+
+#user-comment {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.name-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .popup-container {
@@ -120,7 +169,7 @@ footer {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.656);
   display: none;
-  padding: 5rem;
+  padding: 4rem;
   backdrop-filter: blur(3px);
   overflow-y: scroll;
 }
@@ -133,6 +182,8 @@ footer {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  height: 90vh;
+  overflow-y: scroll;
 }
 
 .popup-window > h2 {
@@ -170,6 +221,7 @@ footer {
   align-self: center;
   font-size: 1.5rem;
   text-decoration: underline;
+  padding: 30px;
 }
 
 .close-icon {
@@ -184,3 +236,17 @@ footer {
   color: red;
   transform: scale(1.5);
 }
+
+.form-container {
+  display: flex;
+  flex-direction: row-reverse;
+  border: solid;
+  width: 60%;
+  justify-content: space-around;
+  gap: 0.9rem;
+  height: 30rem;
+}
+
+
+
+
