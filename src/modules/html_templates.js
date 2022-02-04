@@ -1,4 +1,4 @@
-import { postComment, getComment,countComments,deleteComments } from './apicomment.js';
+import { postComment, getComment,countComments} from './apicomment.js';
 
 const filmTemplate = (info, index, numLikes) => `
 <li>
@@ -20,7 +20,6 @@ const popUpTemplate = async (movie) => {
   const popUpContainer = document.querySelector('.popup-container');
   const commentData = await getComment(movie.id);
   const commentCount = countComments(commentData)
-  const deleteComment = deleteComments(commentData)
   console.log(commentCount)
   const commentItems = () => {
     if (!Array.isArray(commentData)) {
