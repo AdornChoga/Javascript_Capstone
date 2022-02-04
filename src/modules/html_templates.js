@@ -20,7 +20,6 @@ const popUpTemplate = async (movie) => {
   const popUpContainer = document.querySelector('.popup-container');
   const commentData = await getComment(movie.id);
   const commentCount = countComments(commentData)
-  console.log(commentCount)
   const commentItems = () => {
     if (!Array.isArray(commentData)) {
       return '<li>No comment</li>';

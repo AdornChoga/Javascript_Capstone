@@ -13,7 +13,7 @@ const displayMovies = async () => {
     const [likes] = likesArray.filter((n) => Number(n.item_id) === movieData.id);
     filmsContainer.innerHTML += Templates.filmTemplate(movieData, index, likes.likes);
     const btn = document.querySelectorAll('.comments');
-    const likesNodes = document.querySelectorAll('.fa-heart');
+    const likesNodes = document.querySelectorAll('.likes');
     return { buttons: btn, likesIcons: likesNodes };
   });
   const eventsElements = result[result.length - 1];
@@ -33,7 +33,7 @@ const displaySeries = async () => {
     const numLikes = likes !== undefined ? likes.likes : 0;
     filmsContainer.innerHTML += Templates.filmTemplate(seriesData, index, numLikes);
     const btn = document.querySelectorAll('.comments');
-    const likesNodes = document.querySelectorAll('.fa-heart');
+    const likesNodes = document.querySelectorAll('.likes');
     return { buttons: btn, likesIcons: likesNodes };
   });
   const eventsElements = result[result.length - 1];
