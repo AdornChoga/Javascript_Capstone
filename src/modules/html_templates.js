@@ -26,7 +26,10 @@ const popUpTemplate = async (movie) => {
     if (!Array.isArray(commentData)) {
       return '<li>No comment</li>';
     }
-    const commentTemplate = commentData.map((comment) => `<li>${comment.username} : ${comment.comment}</li>`);
+    const commentTemplate = commentData.map((comment) => `<li>
+      <span id="user">${comment.username}:</span>
+      <span id="user-comment">${comment.comment}</span>
+    </li>`);
     return commentTemplate.join('');
   };
 
@@ -49,8 +52,8 @@ const popUpTemplate = async (movie) => {
   <div class='form-container'>
   <ul class='comment-list'>${commentItems()}</ul>
    <div class='name-field'>
-    <input type='text' id='username' placeholder='Please enter your name'>
-    <textarea name='textarea' id='comment' cols='10' rows='5' placeholder='please add a comment'></textarea>
+    <input type='text' id='username' placeholder='your name'>
+    <textarea name='textarea' id='comment' cols='10' rows='2' placeholder='write a comment'></textarea>
     <button type='submit'>Comment</button>
     </div>
     </div>
@@ -81,7 +84,11 @@ const popUpTemplate = async (movie) => {
     document.querySelector('.popup-comments').innerHTML = `Comments (${countComment})`
     listContainer.innerHTML = '';
     commentInfo.forEach((comment) => {
-      const listItem = `<li>${comment.username}: ${comment.comment}</li>`;
+      const listItem = `
+      <li>
+        <span id="user">${comment.username}:</span>
+        <span id="user-comment">${comment.comment}</span>
+      </li>`;
       listContainer.innerHTML += listItem;
       
     });
