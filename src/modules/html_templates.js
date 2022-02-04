@@ -47,8 +47,8 @@ const popUpTemplate = async (movie) => {
   <div class='form-container'>
   <ul class='comment-list'>${commentItems()}</ul>
    <div class='name-field'>
-    <input type='text' id='username' placeholder='Please enter your name'>
-    <textarea name='textarea' id='comment' cols='10' rows='5' placeholder='please add a comment'></textarea>
+    <input type='text' id='username' placeholder='Please enter your name' required>
+    <textarea name='textarea' id='comment' cols='10' rows='5' placeholder='please add a comment' required></textarea>
     <button type='submit'>Comment</button>
     </div>
     </div>
