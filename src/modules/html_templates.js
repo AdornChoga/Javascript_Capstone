@@ -1,4 +1,4 @@
-import { postComment, getComment } from './apicomment.js';
+import { postComment, getComment, countComments } from './apicomment.js';
 
 const filmTemplate = (info, index, numLikes) => `
 <li>
@@ -19,14 +19,12 @@ const filmTemplate = (info, index, numLikes) => `
 const popUpTemplate = async (movie) => {
   const popUpContainer = document.querySelector('.popup-container');
   const commentData = await getComment(movie.id);
+  const commentCount = countComments(commentData);
   const commentItems = () => {
     if (!Array.isArray(commentData)) {
       return '<li>No comment</li>';
     }
-    const commentTemplate = commentData.map((comment) => `<li>
-      <span id="user">${comment.username}:</span>
-      <span id="user-comment">${comment.comment}</span>
-    </li>`);
+    const commentTemplate = commentData.map((comment) => `<li>${comment.username} : ${comment.comment}</li>`);
     return commentTemplate.join('');
   };
 
@@ -44,14 +42,13 @@ const popUpTemplate = async (movie) => {
         <span><b>Summary:</b> ${movie.description}</span>
       </div>
     </div>
-    <div class='popup-comments'>Comments</div>
-    
+    <div class='popup-comments'>Comments (${commentCount})</div>
   <form class='form-submit'>
   <div class='form-container'>
   <ul class='comment-list'>${commentItems()}</ul>
    <div class='name-field'>
-    <input type='text' id='username' placeholder='your name'>
-    <textarea name='textarea' id='comment' cols='10' rows='2' placeholder='write a comment'></textarea>
+    <input type='text' id='username' placeholder='Please enter your name'>
+    <textarea name='textarea' id='comment' cols='10' rows='5' placeholder='please add a comment'></textarea>
     <button type='submit'>Comment</button>
     </div>
     </div>
@@ -78,13 +75,11 @@ const popUpTemplate = async (movie) => {
     form.reset();
     await postComment(comment);
     const commentInfo = await getComment(comment.item_id);
+    const countComment = countComments(commentInfo);
+    document.querySelector('.popup-comments').innerHTML = `Comments (${countComment})`;
     listContainer.innerHTML = '';
     commentInfo.forEach((comment) => {
-      const listItem = `
-      <li>
-        <span id="user">${comment.username}:</span>
-        <span id="user-comment">${comment.comment}</span>
-      </li>`;
+      const listItem = `<li>${comment.username}: ${comment.comment}</li>`;
       listContainer.innerHTML += listItem;
     });
   });

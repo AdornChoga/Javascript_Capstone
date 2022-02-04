@@ -14,4 +14,12 @@ const getComment = async (id) => {
   const result = await response.json();
   return result;
 };
-export { getComment, postComment };
+
+const countComments = (commentArray) => {
+  if (commentArray.length === undefined) {
+    return 0;
+  }
+  return commentArray.length;
+};
+
+export { getComment, postComment, countComments };
