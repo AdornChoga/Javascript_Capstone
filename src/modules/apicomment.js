@@ -15,9 +15,6 @@ const getComment = async (id) => {
   return result;
 };
 
+const countComments = (commentArray) => commentArray.length;
 
-const countComments = (commentArray)=> commentArray.length
-
-export { getComment, postComment,countComments };
-
-
+export { getComment, postComment, countComments };
