@@ -58,7 +58,7 @@ const popUpTemplate = async (movie) => {
 
   popUpContainer.style.display = 'block';
   const closePopup = document.querySelector('.close-icon');
-  closePopup.addEventListener('click', () => { popUpContainer.style.display = 'none' });
+  closePopup.addEventListener('click', () => { popUpContainer.style.display = 'none'; });
 
   const form = document.querySelector('.form-submit');
 
