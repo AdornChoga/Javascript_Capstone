@@ -27,14 +27,44 @@ nav ul {
   font-family: sans-serif;
 }
 
+nav ul li + li {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.comment-list li {
+  margin: 2px;
+  font-size: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.603);
+  border-radius: 3px;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.comment-list {
+  width: 50%;
+  height: 95%;
+  outline: 0.1rem outset;
+  overflow-y: scroll;
+  gap: 5px;
+}
+
 .fa-film {
   font-size: 5rem;
   color: darkblue;
 }
 
-nav ul li + li {
-  font-size: 3rem;
-  cursor: pointer;
+.films li {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: 0.2rem solid red;
+  text-align: center;
+  font-size: 1vw;
+}
+
+nav ul li:hover {
+  border-bottom: 2px solid black;
 }
 
 .focussed {
@@ -58,15 +88,6 @@ main {
 
 .image-container {
   width: 100%;
-}
-
-.films li {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  border: 0.2rem solid red;
-  text-align: center;
-  font-size: 1vw;
 }
 
 .film-image {
@@ -134,17 +155,6 @@ form {
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
-}
-
-.comment-list {
-  width: 50%;
-  height: 95%;
-  outline: 0.1rem outset;
-  overflow-y: scroll;
-}
-
-.comment-list li {
-  word-wrap: break-word;
 }
 
 #username,
