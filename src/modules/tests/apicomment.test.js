@@ -1,4 +1,4 @@
-import { countComments } from '../apicomment';
+import { countComments } from '../apicomment.js';
 
 describe('Testing for counts', () => {
   test('Adding a new comment', () => {
