@@ -58,7 +58,7 @@ const popUpTemplate = async (movie) => {
 
   popUpContainer.style.display = 'block';
   const closePopup = document.querySelector('.close-icon');
-  closePopup.addEventListener('click', () => {popUpContainer.style.display = 'none';});
+  closePopup.addEventListener('click', () => { popUpContainer.style.display = 'none' });
 
   const form = document.querySelector('.form-submit');
 
@@ -76,9 +76,7 @@ const popUpTemplate = async (movie) => {
     await postComment(comment);
     const commentInfo = await getComment(comment.item_id);
     const countComment = countComments(commentInfo);
-    document.querySelector(
-      '.popup-comments'
-    ).innerHTML = `Comments (${countComment})`;
+    document.querySelector('.popup-comments').innerHTML = `Comments (${countComment})`;
     listContainer.innerHTML = '';
     commentInfo.forEach((comment) => {
       const listItem = `<li>${comment.username}: ${comment.comment}</li>`;
