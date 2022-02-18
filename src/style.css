@@ -49,8 +49,8 @@ nav ul li {
 }
 
 .comment-list li {
-  margin: 2px;
-  font-size: 10px;
+  margin: 0.2rem;
+  font-size: 1rem;
   border: 1px solid rgba(128, 128, 128, 0.603);
   border-radius: 3px;
   width: 90%;
@@ -63,7 +63,7 @@ nav ul li {
   height: 28.8rem;
   outline: 0.1rem outset;
   overflow-y: scroll;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .fa-film {
@@ -72,7 +72,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-  border-bottom: 2px solid black;
+  border-bottom: 0.2rem solid black;
 }
 
 .focussed {
@@ -172,7 +172,7 @@ footer {
 
 form {
   display: flex;
-  gap: 20px;
+  gap: 2rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -226,7 +226,7 @@ form {
 .popup-window {
   position: relative;
   width: 90%;
-  padding: 20px;
+  padding: 2rem;
   background-color: white;
   margin: 0 auto;
   display: flex;
@@ -271,7 +271,7 @@ form {
   align-self: center;
   font-size: 1.5rem;
   text-decoration: underline;
-  padding: 30px;
+  padding: 3rem;
 }
 
 .close-icon {

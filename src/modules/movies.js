@@ -1,4 +1,5 @@
-const filmsID = [314142, 79551, 343435, 377673, 80270, 248596, 84068, 73255, 353615];
+const filmsID = [314142, 79551, 343435, 377673, 80270,
+  248596, 84068, 73255, 353615];
 const baseUrl = 'https://api.tvmaze.com/lookup/shows?thetvdb=';
 
 const getMovies = () => {
