@@ -1,12 +1,11 @@
 import { postComment, getComment, countComments } from './apicomment.js';
 
 const filmTemplate = (info, index, numLikes) => `
-<li>
+<li class="film">
   <div class='image-container'>
     <img src=${info.image} class='film-image'>
   </div>
   <div class='film-info'>
-    <h1 class='film-title'>${info.name}</h1>
     <div class='likes'>
       <i class='far fa-heart' id='${info.id}'></i>
       <span class='likes'>${numLikes} ${Number(numLikes) === 1 ? 'Like' : 'Likes'} </span>
@@ -35,7 +34,7 @@ const popUpTemplate = async (movie) => {
       <path fill='currentColor' d='M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z' />
     </svg>
     <div class='movie-info'>
-      <img src=${movie.image} class='film-image'>
+      <img src=${movie.image} class='popup-image'>
       <div class='description'>
         <span><b>Average Runtime:</b> ${movie.runtime} minutes</span>
         <span><b>Ended:</b> ${movie.ended} </span>
@@ -48,7 +47,7 @@ const popUpTemplate = async (movie) => {
   <ul class='comment-list'>${commentItems()}</ul>
    <div class='name-field'>
     <input type='text' id='username' placeholder='Please enter your name' required>
-    <textarea name='textarea' id='comment' cols='10' rows='5' placeholder='please add a comment' required></textarea>
+    <textarea name='textarea' id='comment' placeholder='please add a comment' required></textarea>
     <button type='submit'>Comment</button>
     </div>
     </div>

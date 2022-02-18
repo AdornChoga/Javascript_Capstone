@@ -3,7 +3,7 @@ import getMovies from './movies.js';
 import getSeries from './series.js';
 import countItems from './items_counter.js';
 
-const movieSection = document.querySelector('.movie-sect');
+const movieSection = document.querySelector('.movies-sect');
 const seriesSection = document.querySelector('.series-sect');
 const numOfMovies = document.querySelector('#num-of-movies');
 const numOfSeries = document.querySelector('#num-of-series');
