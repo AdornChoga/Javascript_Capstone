@@ -12,7 +12,6 @@ const getMovies = () => {
       image: movie.image.original,
       description: movie.summary,
       runtime: movie.averageRuntime,
-      ended: movie.ended,
       id: movie.id,
     };
     return obj;
