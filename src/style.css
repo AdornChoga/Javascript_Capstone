@@ -13,15 +13,30 @@ body {
   background-color: rgb(241, 148, 93);
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(48, 49, 112);
+}
+
 li {
   list-style: none;
   gap: 12px;
   font-size: 10px;
 }
 
-nav {
+header div {
   display: flex;
-  justify-content: flex-start;
+  align-items: center;
+}
+
+nav {
+  border-bottom: 0.3rem solid rgb(56, 209, 89);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   padding-left: 1rem;
   align-items: center;
 }
@@ -30,28 +45,48 @@ nav ul {
   list-style-type: none;
   display: flex;
   gap: 2rem;
-  font-family: sans-serif;
-  margin-right: auto;
-}
-
-nav ul li {
-  font-size: 3rem;
-  cursor: pointer;
+  padding-right: 1rem;
 }
 
 .movies-sect,
 .series-sect {
-  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  font-size: clamp(1.4rem, 3.5vw, 3rem);
+  color: rgb(236, 233, 233);
+  font-family:
+    'Lucida Sans',
+    'Lucida Sans Regular',
+    'Lucida Grande',
+    'Lucida Sans Unicode',
+    Geneva,
+    Verdana,
+    sans-serif;
+  cursor: pointer;
+  margin: 0;
 }
 
-.logo {
-  margin-right: auto;
+.site-title {
+  font-size: clamp(1.2rem, 3vw, 2.3rem);
+  color: white;
+  font-family:
+    'Lucida Sans',
+    'Lucida Sans Regular',
+    'Lucida Grande',
+    'Lucida Sans Unicode',
+    Geneva,
+    Verdana,
+    sans-serif;
+}
+
+main {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
 .comment-list li {
   margin: 0.2rem;
-  font-size: 1rem;
-  border: 1px solid rgba(128, 128, 128, 0.603);
+  padding: 0.2rem;
+  font-size: 1.3rem;
+  border: 1px solid rgba(245, 242, 242, 0.603);
   border-radius: 3px;
   width: 90%;
   word-wrap: break-word;
@@ -67,20 +102,17 @@ nav ul li {
 }
 
 .fa-film {
-  font-size: 5rem;
-  color: darkblue;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: rgb(203, 203, 211);
 }
 
-nav ul li:hover {
-  border-bottom: 0.2rem solid black;
+nav ul li h1:hover {
+  transform: translateY(-2px);
+  color: rgb(23, 179, 106);
 }
 
 .focussed {
-  text-decoration: underline blue;
-}
-
-main {
-  margin-bottom: 5rem;
+  text-decoration: underline rgb(241, 148, 93);
 }
 
 .films {
@@ -153,6 +185,14 @@ main {
   color: rgb(65, 47, 8);
 }
 
+.comments:active {
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+}
+
 footer {
   width: 100%;
   border: 0.2rem solid black;
@@ -187,9 +227,34 @@ form {
 
 #username,
 #comment {
+  background-color: #f1945d;
   outline: none;
   border: none;
   border-bottom: 0.2rem solid;
+}
+
+#username::placeholder,
+#comment::placeholder {
+  color: black;
+}
+
+#input-error::before {
+  content: "*";
+  color: red;
+}
+
+#input-error {
+  display: none;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-style: italic;
+}
+
+#submit {
+  width: 70%;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: rgb(23, 179, 106);
 }
 
 #user {
@@ -206,8 +271,10 @@ form {
 .name-field {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
   margin-top: 1rem;
+  align-self: flex-start;
 }
 
 .popup-container {
@@ -225,12 +292,13 @@ form {
 
 .popup-window {
   position: relative;
-  width: 90%;
+  width: 80%;
   padding: 2rem;
-  background-color: white;
+  background-color: #f1945d;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-height: 90vh;
   overflow-y: scroll;
 }
@@ -319,11 +387,11 @@ form {
 
   .form-container {
     flex-direction: column-reverse;
-    overflow-y: auto;
     height: 45rem;
     padding: 0;
     width: clamp(25rem, 70%, 35rem);
     gap: 0;
+    border: solid;
   }
 
   .comment-list {
@@ -333,7 +401,7 @@ form {
 
   .name-field {
     width: clamp(17rem, 50%, 25rem);
-    margin-inline: auto;
+    align-self: center;
   }
 }
 

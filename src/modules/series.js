@@ -12,7 +12,6 @@ const getSeries = () => {
       image: series.image.original,
       description: series.summary,
       runtime: series.averageRuntime,
-      ended: series.ended,
       id: series.id,
     };
     return obj;
